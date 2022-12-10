@@ -1,3 +1,5 @@
+#### [[На русском языки](/README_ru.md) - [In Russian](/README_ru.md)] | [[На английском языки](/README.md) - [In English](/README.md)]
+
 # :pushpin:RayMaster [helper]
 # How to use
 Move the unitypackage or Scripts folder to unity.
