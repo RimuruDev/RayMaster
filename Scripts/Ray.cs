@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 namespace RimuruDev.RayMaster
 {
@@ -42,7 +41,7 @@ namespace RimuruDev.RayMaster
             return rayCamera.ViewportPointToRay(center);
         }
 
-        public static RaycastHit GetRey()
+        public static RaycastHit GetRay()
         {
             Physics.Raycast(GetCameraCenter(), out hit);
 
@@ -51,7 +50,7 @@ namespace RimuruDev.RayMaster
 
         public static bool TryGet<Type>(out Type value) where Type : MonoBehaviour
         {
-            if (GetRey().transform.TryGetComponent(out Type outValue))
+            if (GetRay().transform.TryGetComponent(out Type outValue))
             {
                 value = outValue;
                 return true;
@@ -65,7 +64,7 @@ namespace RimuruDev.RayMaster
 
         public static Component Get<Type>() where Type : MonoBehaviour
         {
-            return GetRey().transform.GetComponent<Type>();
+            return GetRay().transform.GetComponent<Type>();
         }
 
         public static bool Get<Type>(out Type component) where Type : MonoBehaviour
@@ -83,29 +82,29 @@ namespace RimuruDev.RayMaster
         }
         #endregion
 
-        #region GetRey [Overrire classics Physics.Raycast()]
-        public static RaycastHit GetRey(float maxDistance)
+        #region GetRay [Overrire classics Physics.Raycast()]
+        public static RaycastHit GetRay(float maxDistance)
         {
             Physics.Raycast(GetCameraCenter(), out hit, maxDistance);
 
             return hit;
         }
 
-        public static RaycastHit GetRey(LayerMask layerMask)
+        public static RaycastHit GetRay(LayerMask layerMask)
         {
             Physics.Raycast(GetCameraCenter(), out hit, layerMask);
 
             return hit;
         }
 
-        public static RaycastHit GetRey(float maxDistance, LayerMask layerMask)
+        public static RaycastHit GetRay(float maxDistance, LayerMask layerMask)
         {
             Physics.Raycast(GetCameraCenter(), out hit, maxDistance, layerMask);
 
             return hit;
         }
 
-        public static RaycastHit GetRey(float maxDistance, LayerMask layerMask, QueryTriggerInteraction queryTriggerInteraction)
+        public static RaycastHit GetRay(float maxDistance, LayerMask layerMask, QueryTriggerInteraction queryTriggerInteraction)
         {
             Physics.Raycast(GetCameraCenter(), out hit, maxDistance, layerMask, queryTriggerInteraction);
 
